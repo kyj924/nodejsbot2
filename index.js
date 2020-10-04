@@ -38,7 +38,328 @@ bot.on("message", message => {
     }
     return array;
   }
-  if (cmdTxt === "팀") {
+
+  if (cmdTxt === "팀 4") {
+    const reactionFilter = (reaction, users) => reaction.emoji.name === '✅'
+
+    message.channel.send('이모지를 누르면 참가합니다.')
+      .then(msg => msg.react('✅'))
+      .then(mReaction => {
+        const collector = mReaction.message
+          .createReactionCollector(reactionFilter, {
+            max: 5,
+            dispose: true,
+
+          })
+
+
+        collector.on('collect', r => {
+          r.message.edit(`(4인)참가자 목록: ${mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`).join(" ")}`)
+
+
+        })
+        collector.on('remove', r => {
+          r.message.edit(`(4인)참가자 목록: ${mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`).join(" ")}`)
+          console.log(users)
+
+        })
+
+        collector.on('end', r => {
+          var arr = mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`)
+          arr = shuffle(arr);
+          var half_length = Math.ceil(arr.length / 2);
+          var leftSide = arr.splice(0, half_length);
+          message.channel.send(`1팀 \n ${arr.join("\n")}`)
+          message.channel.send(`2팀 \n ${leftSide.join("\n")}`)
+          return
+        })
+
+
+
+
+      })
+  }
+  if (cmdTxt === "팀 5") {
+    const reactionFilter = (reaction, users) => reaction.emoji.name === '✅'
+
+    message.channel.send('이모지를 누르면 참가합니다.')
+      .then(msg => msg.react('✅'))
+      .then(mReaction => {
+        const collector = mReaction.message
+          .createReactionCollector(reactionFilter, {
+            max: 6,
+            dispose: true,
+
+          })
+
+
+        collector.on('collect', r => {
+          r.message.edit(`(5인)참가자 목록: ${mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`).join(" ")}`)
+
+
+        })
+        collector.on('remove', r => {
+          r.message.edit(`(5인)참가자 목록: ${mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`).join(" ")}`)
+          console.log(users)
+
+        })
+
+        collector.on('end', r => {
+          var arr = mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`)
+          arr = shuffle(arr);
+          var half_length = Math.ceil(arr.length / 2);
+          var leftSide = arr.splice(0, half_length);
+          message.channel.send(`1팀 \n ${arr.join("\n")}`)
+          message.channel.send(`2팀 \n ${leftSide.join("\n")}`)
+          return
+        })
+
+
+
+
+      })
+  }
+  if (cmdTxt === "팀 6") {
+    const reactionFilter = (reaction, users) => reaction.emoji.name === '✅'
+
+    message.channel.send('이모지를 누르면 참가합니다.')
+      .then(msg => msg.react('✅'))
+      .then(mReaction => {
+        const collector = mReaction.message
+          .createReactionCollector(reactionFilter, {
+            max: 7,
+            dispose: true,
+
+          })
+
+
+        collector.on('collect', r => {
+          r.message.edit(`(6인)참가자 목록: ${mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`).join(" ")}`)
+
+
+        })
+        collector.on('remove', r => {
+          r.message.edit(`(6인)참가자 목록: ${mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`).join(" ")}`)
+          console.log(users)
+
+        })
+
+        collector.on('end', r => {
+          var arr = mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`)
+          arr = shuffle(arr);
+          var half_length = Math.ceil(arr.length / 2);
+          var leftSide = arr.splice(0, half_length);
+          message.channel.send(`1팀 \n ${arr.join("\n")}`)
+          message.channel.send(`2팀 \n ${leftSide.join("\n")}`)
+          return
+        })
+
+
+
+
+      })
+  }
+  if (cmdTxt === "팀 7") {
+    const reactionFilter = (reaction, users) => reaction.emoji.name === '✅'
+
+    message.channel.send('이모지를 누르면 참가합니다.')
+      .then(msg => msg.react('✅'))
+      .then(mReaction => {
+        const collector = mReaction.message
+          .createReactionCollector(reactionFilter, {
+            max: 8,
+            dispose: true,
+
+          })
+
+
+        collector.on('collect', r => {
+          r.message.edit(`(7인)참가자 목록: ${mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`).join(" ")}`)
+
+
+        })
+        collector.on('remove', r => {
+          r.message.edit(`(7인)참가자 목록: ${mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`).join(" ")}`)
+          console.log(users)
+
+        })
+
+        collector.on('end', r => {
+          var arr = mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`)
+          arr = shuffle(arr);
+          var half_length = Math.ceil(arr.length / 2);
+          var leftSide = arr.splice(0, half_length);
+          message.channel.send(`1팀 \n ${arr.join("\n")}`)
+          message.channel.send(`2팀 \n ${leftSide.join("\n")}`)
+          return
+        })
+
+
+
+
+      })
+  }
+  if (cmdTxt === "팀 8") {
+    const reactionFilter = (reaction, users) => reaction.emoji.name === '✅'
+
+    message.channel.send('이모지를 누르면 참가합니다.')
+      .then(msg => msg.react('✅'))
+      .then(mReaction => {
+        const collector = mReaction.message
+          .createReactionCollector(reactionFilter, {
+            max: 9,
+            dispose: true,
+
+          })
+
+
+        collector.on('collect', r => {
+          r.message.edit(`(8인)참가자 목록: ${mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`).join(" ")}`)
+
+
+        })
+        collector.on('remove', r => {
+          r.message.edit(`(8인)참가자 목록: ${mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`).join(" ")}`)
+          console.log(users)
+
+        })
+
+        collector.on('end', r => {
+          var arr = mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`)
+          arr = shuffle(arr);
+          var half_length = Math.ceil(arr.length / 2);
+          var leftSide = arr.splice(0, half_length);
+          message.channel.send(`1팀 \n ${arr.join("\n")}`)
+          message.channel.send(`2팀 \n ${leftSide.join("\n")}`)
+          return
+        })
+
+
+
+
+      })
+  }
+  if (cmdTxt === "팀 9") {
+    const reactionFilter = (reaction, users) => reaction.emoji.name === '✅'
+
+    message.channel.send('이모지를 누르면 참가합니다.')
+      .then(msg => msg.react('✅'))
+      .then(mReaction => {
+        const collector = mReaction.message
+          .createReactionCollector(reactionFilter, {
+            max: 10,
+            dispose: true,
+
+          })
+
+
+        collector.on('collect', r => {
+          r.message.edit(`(9인)참가자 목록: ${mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`).join(" ")}`)
+
+
+        })
+        collector.on('remove', r => {
+          r.message.edit(`(9인)참가자 목록: ${mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`).join(" ")}`)
+          console.log(users)
+
+        })
+
+        collector.on('end', r => {
+          var arr = mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`)
+          arr = shuffle(arr);
+          var half_length = Math.ceil(arr.length / 2);
+          var leftSide = arr.splice(0, half_length);
+          message.channel.send(`1팀 \n ${arr.join("\n")}`)
+          message.channel.send(`2팀 \n ${leftSide.join("\n")}`)
+          return
+        })
+
+
+
+
+      })
+  }
+  if (cmdTxt === "팀 10") {
+    const reactionFilter = (reaction, users) => reaction.emoji.name === '✅'
+
+    message.channel.send('이모지를 누르면 참가합니다.')
+      .then(msg => msg.react('✅'))
+      .then(mReaction => {
+        const collector = mReaction.message
+          .createReactionCollector(reactionFilter, {
+            max: 11,
+            dispose: true,
+
+          })
+
+
+        collector.on('collect', r => {
+          r.message.edit(`(10인)참가자 목록: ${mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`).join(" ")}`)
+
+
+        })
+        collector.on('remove', r => {
+          r.message.edit(`(10인)참가자 목록: ${mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`).join(" ")}`)
+          console.log(users)
+
+        })
+
+        collector.on('end', r => {
+          var arr = mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`)
+          arr = shuffle(arr);
+          var half_length = Math.ceil(arr.length / 2);
+          var leftSide = arr.splice(0, half_length);
+          message.channel.send(`1팀 \n ${arr.join("\n")}`)
+          message.channel.send(`2팀 \n ${leftSide.join("\n")}`)
+          return
+        })
+
+
+
+
+      })
+  }
+  if (cmdTxt === "팀 11") {
+    const reactionFilter = (reaction, users) => reaction.emoji.name === '✅'
+
+    message.channel.send('이모지를 누르면 참가합니다.')
+      .then(msg => msg.react('✅'))
+      .then(mReaction => {
+        const collector = mReaction.message
+          .createReactionCollector(reactionFilter, {
+            max: 12,
+            dispose: true,
+
+          })
+
+
+        collector.on('collect', r => {
+          r.message.edit(`(11인)참가자 목록: ${mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`).join(" ")}`)
+
+
+        })
+        collector.on('remove', r => {
+          r.message.edit(`(11인)참가자 목록: ${mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`).join(" ")}`)
+          console.log(users)
+
+        })
+
+        collector.on('end', r => {
+          var arr = mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`)
+          arr = shuffle(arr);
+          var half_length = Math.ceil(arr.length / 2);
+          var leftSide = arr.splice(0, half_length);
+          message.channel.send(`1팀 \n ${arr.join("\n")}`)
+          message.channel.send(`2팀 \n ${leftSide.join("\n")}`)
+          return
+        })
+
+
+
+
+      })
+  }
+  if (cmdTxt === "팀 12") {
     const reactionFilter = (reaction, users) => reaction.emoji.name === '✅'
 
     message.channel.send('이모지를 누르면 참가합니다.')
