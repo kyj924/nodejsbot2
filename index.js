@@ -38,8 +38,8 @@ bot.on("message", message => {
     }
     return array;
   }
-  const args = message.content.slice(prefix.length).trim().split(' ');
   if (cmdTxt === "팀 ".length) {
+    const args = message.content.slice(1).split(' ');
     const reactionFilter = (reaction, users) => reaction.emoji.name === '✅'
     const maxamount = args
 
