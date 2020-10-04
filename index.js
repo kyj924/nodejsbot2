@@ -40,43 +40,27 @@ bot.on("message", message => {
   }
   if (cmdTxt === "팀") {
     const reactionFilter = (reaction, users) => reaction.emoji.name === '✅'
-    const embed = new Discord.MessageEmbed({
-      title: "팀 나누기",
-      description: "(오버워치, 12명 필요)",
-      fields: [{
-        name: '참가자 (12인)',
-        value: 'none'
-      }]
-    })
-    message.channel.send(embed)
+
+    message.channel.send('이모지를 누르면 참가합니다.')
       .then(msg => msg.react('✅'))
       .then(mReaction => {
         const collector = mReaction.message
           .createReactionCollector(reactionFilter, {
             max: 13,
             dispose: true,
-          });
+
+          })
+
 
         collector.on('collect', r => {
-          let embedLikeField= Object.assign({}, embed.fields[0]);
-          embedLikeField.value = mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`).join("\n")
-          const newEmbed= new Discord.MessageEmbed({
-            title: embed.title,
-            description: embed.description,
-            fields: [embedLikeField]
-          })
-          r.message.edit(newEmbed)
-        })
+          r.message.edit(`참가자 목록: ${mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`).join(" ")}`)
 
+
+        })
         collector.on('remove', r => {
-          let embedLikeField= Object.assign({}, embed.fields[0]);
-            embedLikeField.value = mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`).join("\n")
-            const newEmbed= new Discord.MessageEmbed({
-              title: embed.title,
-              description: embed.description,
-              fields: [embedLikeField]
-            })
-            r.message.edit(newEmbed)
+          r.message.edit(`참가자 목록: ${mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`).join(" ")}`)
+          console.log(users)
+
         })
 
         collector.on('end', r => {
@@ -84,22 +68,9 @@ bot.on("message", message => {
           arr = shuffle(arr);
           var half_length = Math.ceil(arr.length / 2);
           var leftSide = arr.splice(0, half_length);
-          const embed1 = new Discord.MessageEmbed({
-            title: embed.title,
-            description: "참가자가 꽉 찼습니다.",
-            fields: [{
-              name: '1팀',
-              value: arr.join("\n"),
-              inline: "true"
-            },
-          {
-            name: '2팀',
-            value: leftSide.join("\n"),
-            inline: "true"
-          }
-        ]
-      })
-      message.channel.send(embed1)
+          message.channel.send(`1팀 \n ${arr.join("\n")}`)
+          message.channel.send(`2팀 \n ${leftSide.join("\n")}`)
+          return
         })
 
 
