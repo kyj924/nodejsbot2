@@ -38,9 +38,10 @@ bot.on("message", message => {
     }
     return array;
   }
+  const args = message.content.slice(prefix.length).trim().split(' ');
   if (cmdTxt === "팀 ".length) {
     const reactionFilter = (reaction, users) => reaction.emoji.name === '✅'
-    const maxamount = length+1
+    const maxamount = args
 
     message.channel.send('이모지를 누르면 참가합니다.')
       .then(msg => msg.react('✅'))
