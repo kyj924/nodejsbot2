@@ -45,7 +45,7 @@ bot.on("message", message => {
     message.channel.send('이모지를 누르면 참가합니다.')
       .then(msg => msg.react('✅'))
       .then(mReaction => {
-        const collector = mReaction.message
+        const collector1 = mReaction.message
           .createReactionCollector(reactionFilter, {
             max: 5,
             dispose: true,
@@ -53,18 +53,18 @@ bot.on("message", message => {
           })
 
 
-        collector.on('collect', r => {
+        collector1.on('collect', r => {
           r.message.edit(`(4인)참가자 목록: ${mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`).join(" ")}`)
 
 
         })
-        collector.on('remove', r => {
+        collector1.on('remove', r => {
           r.message.edit(`(4인)참가자 목록: ${mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`).join(" ")}`)
           console.log(users)
 
         })
 
-        collector.on('end', r => {
+        collector1.on('end', r => {
           var arr = mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`)
           arr = shuffle(arr);
           var half_length = Math.ceil(arr.length / 2);
@@ -85,7 +85,7 @@ bot.on("message", message => {
     message.channel.send('이모지를 누르면 참가합니다.')
       .then(msg => msg.react('✅'))
       .then(mReaction => {
-        const collector = mReaction.message
+        const collector2 = mReaction.message
           .createReactionCollector(reactionFilter, {
             max: 6,
             dispose: true,
@@ -93,18 +93,18 @@ bot.on("message", message => {
           })
 
 
-        collector.on('collect', r => {
+        collector2.on('collect', r => {
           r.message.edit(`(5인)참가자 목록: ${mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`).join(" ")}`)
 
 
         })
-        collector.on('remove', r => {
+        collector2.on('remove', r => {
           r.message.edit(`(5인)참가자 목록: ${mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`).join(" ")}`)
           console.log(users)
 
         })
 
-        collector.on('end', r => {
+        collector2.on('end', r => {
           var arr = mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`)
           arr = shuffle(arr);
           var half_length = Math.ceil(arr.length / 2);
@@ -125,7 +125,7 @@ bot.on("message", message => {
     message.channel.send('이모지를 누르면 참가합니다.')
       .then(msg => msg.react('✅'))
       .then(mReaction => {
-        const collector = mReaction.message
+        const collector3 = mReaction.message
           .createReactionCollector(reactionFilter, {
             max: 7,
             dispose: true,
@@ -133,18 +133,18 @@ bot.on("message", message => {
           })
 
 
-        collector.on('collect', r => {
+        collector3.on('collect', r => {
           r.message.edit(`(6인)참가자 목록: ${mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`).join(" ")}`)
 
 
         })
-        collector.on('remove', r => {
+        collector3.on('remove', r => {
           r.message.edit(`(6인)참가자 목록: ${mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`).join(" ")}`)
           console.log(users)
 
         })
 
-        collector.on('end', r => {
+        collector3.on('end', r => {
           var arr = mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`)
           arr = shuffle(arr);
           var half_length = Math.ceil(arr.length / 2);
@@ -165,7 +165,7 @@ bot.on("message", message => {
     message.channel.send('이모지를 누르면 참가합니다.')
       .then(msg => msg.react('✅'))
       .then(mReaction => {
-        const collector = mReaction.message
+        const collector4 = mReaction.message
           .createReactionCollector(reactionFilter, {
             max: 8,
             dispose: true,
@@ -173,18 +173,18 @@ bot.on("message", message => {
           })
 
 
-        collector.on('collect', r => {
+        collector4.on('collect', r => {
           r.message.edit(`(7인)참가자 목록: ${mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`).join(" ")}`)
 
 
         })
-        collector.on('remove', r => {
+        collector4.on('remove', r => {
           r.message.edit(`(7인)참가자 목록: ${mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`).join(" ")}`)
           console.log(users)
 
         })
 
-        collector.on('end', r => {
+        collector4.on('end', r => {
           var arr = mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`)
           arr = shuffle(arr);
           var half_length = Math.ceil(arr.length / 2);
@@ -205,7 +205,7 @@ bot.on("message", message => {
     message.channel.send('이모지를 누르면 참가합니다.')
       .then(msg => msg.react('✅'))
       .then(mReaction => {
-        const collector = mReaction.message
+        const collector5 = mReaction.message
           .createReactionCollector(reactionFilter, {
             max: 9,
             dispose: true,
@@ -213,18 +213,18 @@ bot.on("message", message => {
           })
 
 
-        collector.on('collect', r => {
+        collector5.on('collect', r => {
           r.message.edit(`(8인)참가자 목록: ${mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`).join(" ")}`)
 
 
         })
-        collector.on('remove', r => {
+        collector5.on('remove', r => {
           r.message.edit(`(8인)참가자 목록: ${mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`).join(" ")}`)
           console.log(users)
 
         })
 
-        collector.on('end', r => {
+        collector5.on('end', r => {
           var arr = mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`)
           arr = shuffle(arr);
           var half_length = Math.ceil(arr.length / 2);
@@ -245,7 +245,7 @@ bot.on("message", message => {
     message.channel.send('이모지를 누르면 참가합니다.')
       .then(msg => msg.react('✅'))
       .then(mReaction => {
-        const collector = mReaction.message
+        const collector6 = mReaction.message
           .createReactionCollector(reactionFilter, {
             max: 10,
             dispose: true,
@@ -253,18 +253,18 @@ bot.on("message", message => {
           })
 
 
-        collector.on('collect', r => {
+        collector6.on('collect', r => {
           r.message.edit(`(9인)참가자 목록: ${mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`).join(" ")}`)
 
 
         })
-        collector.on('remove', r => {
+        collector6.on('remove', r => {
           r.message.edit(`(9인)참가자 목록: ${mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`).join(" ")}`)
           console.log(users)
 
         })
 
-        collector.on('end', r => {
+        collector6.on('end', r => {
           var arr = mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`)
           arr = shuffle(arr);
           var half_length = Math.ceil(arr.length / 2);
@@ -285,7 +285,7 @@ bot.on("message", message => {
     message.channel.send('이모지를 누르면 참가합니다.')
       .then(msg => msg.react('✅'))
       .then(mReaction => {
-        const collector = mReaction.message
+        const collector7 = mReaction.message
           .createReactionCollector(reactionFilter, {
             max: 11,
             dispose: true,
@@ -293,18 +293,18 @@ bot.on("message", message => {
           })
 
 
-        collector.on('collect', r => {
+        collector7.on('collect', r => {
           r.message.edit(`(10인)참가자 목록: ${mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`).join(" ")}`)
 
 
         })
-        collector.on('remove', r => {
+        collector7.on('remove', r => {
           r.message.edit(`(10인)참가자 목록: ${mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`).join(" ")}`)
           console.log(users)
 
         })
 
-        collector.on('end', r => {
+        collector7.on('end', r => {
           var arr = mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`)
           arr = shuffle(arr);
           var half_length = Math.ceil(arr.length / 2);
@@ -325,7 +325,7 @@ bot.on("message", message => {
     message.channel.send('이모지를 누르면 참가합니다.')
       .then(msg => msg.react('✅'))
       .then(mReaction => {
-        const collector = mReaction.message
+        const collector8 = mReaction.message
           .createReactionCollector(reactionFilter, {
             max: 12,
             dispose: true,
@@ -333,18 +333,18 @@ bot.on("message", message => {
           })
 
 
-        collector.on('collect', r => {
+        collector8.on('collect', r => {
           r.message.edit(`(11인)참가자 목록: ${mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`).join(" ")}`)
 
 
         })
-        collector.on('remove', r => {
+        collector8.on('remove', r => {
           r.message.edit(`(11인)참가자 목록: ${mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`).join(" ")}`)
           console.log(users)
 
         })
 
-        collector.on('end', r => {
+        collector8.on('end', r => {
           var arr = mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`)
           arr = shuffle(arr);
           var half_length = Math.ceil(arr.length / 2);
@@ -365,7 +365,7 @@ bot.on("message", message => {
     message.channel.send('이모지를 누르면 참가합니다.')
       .then(msg => msg.react('✅'))
       .then(mReaction => {
-        const collector = mReaction.message
+        const collector9 = mReaction.message
           .createReactionCollector(reactionFilter, {
             max: 13,
             dispose: true,
@@ -373,18 +373,18 @@ bot.on("message", message => {
           })
 
 
-        collector.on('collect', r => {
+        collector9.on('collect', r => {
           r.message.edit(`(12인)참가자 목록: ${mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`).join(" ")}`)
 
 
         })
-        collector.on('remove', r => {
+        collector9.on('remove', r => {
           r.message.edit(`(12인)참가자 목록: ${mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`).join(" ")}`)
           console.log(users)
 
         })
 
-        collector.on('end', r => {
+        collector9.on('end', r => {
           var arr = mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`)
           arr = shuffle(arr);
           var half_length = Math.ceil(arr.length / 2);
