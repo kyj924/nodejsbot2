@@ -38,27 +38,28 @@ bot.on("message", message => {
     }
     return array;
   }
-  if (cmdTxt === "팀") {
+  if (cmdTxt === "팀 ".length) {
     const reactionFilter = (reaction, users) => reaction.emoji.name === '✅'
+    const maxamount = length+1
 
     message.channel.send('이모지를 누르면 참가합니다.')
       .then(msg => msg.react('✅'))
       .then(mReaction => {
         const collector = mReaction.message
           .createReactionCollector(reactionFilter, {
-            max: 13,
+            max: maxamount,
             dispose: true,
 
           })
 
 
         collector.on('collect', r => {
-          r.message.edit(`(12인)참가자 목록: ${mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`).join(" ")}`)
+          r.message.edit(`참가자 목록: ${mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`).join(" ")}`)
 
 
         })
         collector.on('remove', r => {
-          r.message.edit(`(12인)참가자 목록: ${mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`).join(" ")}`)
+          r.message.edit(`참가자 목록: ${mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`).join(" ")}`)
           console.log(users)
 
         })
