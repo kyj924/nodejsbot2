@@ -53,12 +53,12 @@ bot.on("message", message => {
 
 
         collector.on('collect', r => {
-          r.message.edit(`참가자 목록: ${mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`).join(" ")}`)
+          r.message.edit(`(12인)참가자 목록: ${mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`).join(" ")}`)
 
 
         })
         collector.on('remove', r => {
-          r.message.edit(`참가자 목록: ${mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`).join(" ")}`)
+          r.message.edit(`(12인)참가자 목록: ${mReaction.users.filter(u => u.id != bot.user.id).map(u => `${u.username}`).join(" ")}`)
           console.log(users)
 
         })
